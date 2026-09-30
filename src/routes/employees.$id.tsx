@@ -6,7 +6,7 @@ import { StatusPill } from "@/components/status-pill";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { employees, initials, leaveRequests } from "@/lib/data";
-import { statusTone } from "./employees.index";
+import { employeeStatusTone as statusTone } from "@/lib/ui";
 
 export const Route = createFileRoute("/employees/$id")({
   loader: ({ params }) => {

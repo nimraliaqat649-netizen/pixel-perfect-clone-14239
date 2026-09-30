@@ -13,7 +13,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { departments, employees, initials, type EmploymentStatus } from "@/lib/data";
+import { departments, employees, initials } from "@/lib/data";
+import { employeeStatusLabel as statusLabel, employeeStatusTone as statusTone } from "@/lib/ui";
 
 export const Route = createFileRoute("/employees/")({
   head: () => ({
@@ -30,19 +31,6 @@ export const Route = createFileRoute("/employees/")({
   component: EmployeesPage,
 });
 
-export const statusTone: Record<EmploymentStatus, "success" | "info" | "warning" | "destructive"> = {
-  active: "success",
-  probation: "info",
-  "on-leave": "warning",
-  offboarding: "destructive",
-};
-
-const statusLabel: Record<EmploymentStatus, string> = {
-  active: "Active",
-  probation: "Probation",
-  "on-leave": "On leave",
-  offboarding: "Offboarding",
-};
 
 function EmployeesPage() {
   const [query, setQuery] = useState("");
