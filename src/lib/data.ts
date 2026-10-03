@@ -196,7 +196,7 @@ export const employees: Employee[] = employeeSeed.map(
     email: `${name.toLowerCase().replace(/[^a-z ]/g, "").split(" ").join(".")}@northwind.com`,
     phone: `+44 20 7${String(1000 + i * 37).slice(0, 4)} ${String(2000 + i * 53).slice(0, 4)}`,
     startDate: `20${18 + (i % 7)}-0${(i % 9) + 1}-1${i % 9}`,
-    manager: i < 7 ? "Elliot Vance (CEO)" : employeeSeed[i % 7][0],
+    manager: i < 7 ? "Elliot Vance (CEO)" : employeeSeed[i % 7]![0],
     type: i % 11 === 0 ? "Contract" : i % 7 === 3 ? "Part-time" : "Full-time",
   }),
 );
@@ -317,7 +317,7 @@ export const candidates: Candidate[] = candidateSeed.map(
     matchScore,
     skills,
     email: `${name.toLowerCase().replace(/[^a-z ]/g, "").split(" ").join(".")}@mail.com`,
-    source: ["LinkedIn", "Referral", "Careers site", "Talent pool"][i % 4],
+    source: ["LinkedIn", "Referral", "Careers site", "Talent pool"][i % 4]!,
     applied: `2026-09-${String((i % 27) + 1).padStart(2, "0")}`,
   }),
 );
@@ -338,10 +338,10 @@ export const attendance: AttendanceRow[] = employees.slice(0, 12).map((e, i) => 
   employee: e.name,
   department: e.department,
   date: "2026-09-30",
-  clockIn: ["08:52", "09:04", "09:31", "08:45", "—"][i % 5],
-  clockOut: ["17:36", "18:02", "17:15", "18:40", "—"][i % 5],
-  hours: [8.7, 8.9, 7.7, 9.9, 0][i % 5],
-  status: (["present", "remote", "late", "present", "absent"] as const)[i % 5],
+  clockIn: ["08:52", "09:04", "09:31", "08:45", "—"][i % 5]!,
+  clockOut: ["17:36", "18:02", "17:15", "18:40", "—"][i % 5]!,
+  hours: [8.7, 8.9, 7.7, 9.9, 0][i % 5]!,
+  status: (["present", "remote", "late", "present", "absent"] as const)[i % 5]!,
 }));
 
 export const headcountTrend = [

@@ -107,11 +107,11 @@ function HrOperations() {
         <section className="surface-card p-5">
           <h2 className="text-sm font-semibold text-foreground">Needs attention</h2>
           <ul className="mt-3 space-y-3">
-            {[
+            {([
               ["3 contracts unsigned", "Engineering · due Friday", "destructive" as const],
               ["2 probation reviews due", "Sales · this week", "warning" as const],
               ["1 policy awaiting legal", "Compliance", "info" as const],
-            ].map(([title, meta, tone]) => (
+            ] as const).map(([title, meta, tone]) => (
               <li key={title} className="rounded-lg border border-border p-3">
                 <div className="flex items-center justify-between gap-2">
                   <p className="text-[13px] font-medium text-foreground">{title}</p>
