@@ -177,7 +177,7 @@ function Breadcrumbs() {
         <span key={path} className="flex items-center gap-1.5">
           <span className="text-border-strong">/</span>
           <span className={cn(i === crumbs.length - 1 && "font-medium text-foreground")}>
-            {LABELS[path] ?? decodeURIComponent(parts[i]).replace(/-/g, " ")}
+            {LABELS[path] ?? decodeURIComponent(parts[i] ?? "").replace(/-/g, " ")}
           </span>
         </span>
       ))}
