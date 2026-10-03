@@ -10,21 +10,46 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AiMatchingRouteImport } from './routes/ai-matching'
 import { Route as AttendanceRouteImport } from './routes/attendance'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as CandidatesRouteImport } from './routes/candidates'
 import { Route as DepartmentsRouteImport } from './routes/departments'
 import { Route as HrOperationsRouteImport } from './routes/hr-operations'
 import { Route as LeaveRouteImport } from './routes/leave'
+import { Route as PipelineRouteImport } from './routes/pipeline'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as TalentSearchRouteImport } from './routes/talent-search'
+import { Route as UploadCvRouteImport } from './routes/upload-cv'
 import { Route as EmployeesIndexRouteImport } from './routes/employees.index'
 import { Route as EmployeesIdRouteImport } from './routes/employees.$id'
+import { Route as JobsIndexRouteImport } from './routes/jobs.index'
+import { Route as JobsNewRouteImport } from './routes/jobs.new'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AiMatchingRoute = AiMatchingRouteImport.update({
+  id: '/ai-matching',
+  path: '/ai-matching',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AttendanceRoute = AttendanceRouteImport.update({
   id: '/attendance',
   path: '/attendance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CandidatesRoute = CandidatesRouteImport.update({
+  id: '/candidates',
+  path: '/candidates',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DepartmentsRoute = DepartmentsRouteImport.update({
@@ -42,6 +67,31 @@ const LeaveRoute = LeaveRouteImport.update({
   path: '/leave',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PipelineRoute = PipelineRouteImport.update({
+  id: '/pipeline',
+  path: '/pipeline',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TalentSearchRoute = TalentSearchRouteImport.update({
+  id: '/talent-search',
+  path: '/talent-search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UploadCvRoute = UploadCvRouteImport.update({
+  id: '/upload-cv',
+  path: '/upload-cv',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EmployeesIndexRoute = EmployeesIndexRouteImport.update({
   id: '/employees/',
   path: '/employees/',
@@ -52,73 +102,153 @@ const EmployeesIdRoute = EmployeesIdRouteImport.update({
   path: '/employees/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const JobsIndexRoute = JobsIndexRouteImport.update({
+  id: '/jobs/',
+  path: '/jobs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JobsNewRoute = JobsNewRouteImport.update({
+  id: '/jobs/new',
+  path: '/jobs/new',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ai-matching': typeof AiMatchingRoute
   '/attendance': typeof AttendanceRoute
+  '/auth': typeof AuthRoute
+  '/candidates': typeof CandidatesRoute
   '/departments': typeof DepartmentsRoute
   '/hr-operations': typeof HrOperationsRoute
   '/leave': typeof LeaveRoute
+  '/pipeline': typeof PipelineRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/talent-search': typeof TalentSearchRoute
+  '/upload-cv': typeof UploadCvRoute
   '/employees/$id': typeof EmployeesIdRoute
+  '/jobs/new': typeof JobsNewRoute
   '/employees/': typeof EmployeesIndexRoute
+  '/jobs/': typeof JobsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ai-matching': typeof AiMatchingRoute
   '/attendance': typeof AttendanceRoute
+  '/auth': typeof AuthRoute
+  '/candidates': typeof CandidatesRoute
   '/departments': typeof DepartmentsRoute
   '/hr-operations': typeof HrOperationsRoute
   '/leave': typeof LeaveRoute
+  '/pipeline': typeof PipelineRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/talent-search': typeof TalentSearchRoute
+  '/upload-cv': typeof UploadCvRoute
   '/employees/$id': typeof EmployeesIdRoute
+  '/jobs/new': typeof JobsNewRoute
   '/employees': typeof EmployeesIndexRoute
+  '/jobs': typeof JobsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ai-matching': typeof AiMatchingRoute
   '/attendance': typeof AttendanceRoute
+  '/auth': typeof AuthRoute
+  '/candidates': typeof CandidatesRoute
   '/departments': typeof DepartmentsRoute
   '/hr-operations': typeof HrOperationsRoute
   '/leave': typeof LeaveRoute
+  '/pipeline': typeof PipelineRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
+  '/talent-search': typeof TalentSearchRoute
+  '/upload-cv': typeof UploadCvRoute
   '/employees/$id': typeof EmployeesIdRoute
+  '/jobs/new': typeof JobsNewRoute
   '/employees/': typeof EmployeesIndexRoute
+  '/jobs/': typeof JobsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/ai-matching'
     | '/attendance'
+    | '/auth'
+    | '/candidates'
     | '/departments'
     | '/hr-operations'
     | '/leave'
+    | '/pipeline'
+    | '/reports'
+    | '/settings'
+    | '/talent-search'
+    | '/upload-cv'
     | '/employees/$id'
+    | '/jobs/new'
     | '/employees/'
+    | '/jobs/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/ai-matching'
     | '/attendance'
+    | '/auth'
+    | '/candidates'
     | '/departments'
     | '/hr-operations'
     | '/leave'
+    | '/pipeline'
+    | '/reports'
+    | '/settings'
+    | '/talent-search'
+    | '/upload-cv'
     | '/employees/$id'
+    | '/jobs/new'
     | '/employees'
+    | '/jobs'
   id:
     | '__root__'
     | '/'
+    | '/ai-matching'
     | '/attendance'
+    | '/auth'
+    | '/candidates'
     | '/departments'
     | '/hr-operations'
     | '/leave'
+    | '/pipeline'
+    | '/reports'
+    | '/settings'
+    | '/talent-search'
+    | '/upload-cv'
     | '/employees/$id'
+    | '/jobs/new'
     | '/employees/'
+    | '/jobs/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AiMatchingRoute: typeof AiMatchingRoute
   AttendanceRoute: typeof AttendanceRoute
+  AuthRoute: typeof AuthRoute
+  CandidatesRoute: typeof CandidatesRoute
   DepartmentsRoute: typeof DepartmentsRoute
   HrOperationsRoute: typeof HrOperationsRoute
   LeaveRoute: typeof LeaveRoute
+  PipelineRoute: typeof PipelineRoute
+  ReportsRoute: typeof ReportsRoute
+  SettingsRoute: typeof SettingsRoute
+  TalentSearchRoute: typeof TalentSearchRoute
+  UploadCvRoute: typeof UploadCvRoute
   EmployeesIdRoute: typeof EmployeesIdRoute
+  JobsNewRoute: typeof JobsNewRoute
   EmployeesIndexRoute: typeof EmployeesIndexRoute
+  JobsIndexRoute: typeof JobsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -130,11 +260,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ai-matching': {
+      id: '/ai-matching'
+      path: '/ai-matching'
+      fullPath: '/ai-matching'
+      preLoaderRoute: typeof AiMatchingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/attendance': {
       id: '/attendance'
       path: '/attendance'
       fullPath: '/attendance'
       preLoaderRoute: typeof AttendanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidates': {
+      id: '/candidates'
+      path: '/candidates'
+      fullPath: '/candidates'
+      preLoaderRoute: typeof CandidatesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/departments': {
@@ -158,6 +309,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LeaveRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pipeline': {
+      id: '/pipeline'
+      path: '/pipeline'
+      fullPath: '/pipeline'
+      preLoaderRoute: typeof PipelineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/talent-search': {
+      id: '/talent-search'
+      path: '/talent-search'
+      fullPath: '/talent-search'
+      preLoaderRoute: typeof TalentSearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/upload-cv': {
+      id: '/upload-cv'
+      path: '/upload-cv'
+      fullPath: '/upload-cv'
+      preLoaderRoute: typeof UploadCvRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/employees/': {
       id: '/employees/'
       path: '/employees'
@@ -172,17 +358,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EmployeesIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/jobs/': {
+      id: '/jobs/'
+      path: '/jobs'
+      fullPath: '/jobs/'
+      preLoaderRoute: typeof JobsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jobs/new': {
+      id: '/jobs/new'
+      path: '/jobs/new'
+      fullPath: '/jobs/new'
+      preLoaderRoute: typeof JobsNewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AiMatchingRoute: AiMatchingRoute,
   AttendanceRoute: AttendanceRoute,
+  AuthRoute: AuthRoute,
+  CandidatesRoute: CandidatesRoute,
   DepartmentsRoute: DepartmentsRoute,
   HrOperationsRoute: HrOperationsRoute,
   LeaveRoute: LeaveRoute,
+  PipelineRoute: PipelineRoute,
+  ReportsRoute: ReportsRoute,
+  SettingsRoute: SettingsRoute,
+  TalentSearchRoute: TalentSearchRoute,
+  UploadCvRoute: UploadCvRoute,
   EmployeesIdRoute: EmployeesIdRoute,
+  JobsNewRoute: JobsNewRoute,
   EmployeesIndexRoute: EmployeesIndexRoute,
+  JobsIndexRoute: JobsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
