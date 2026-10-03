@@ -1,0 +1,2 @@
+- [ ] Bring in existing app from github.com/hamzaabialal/techticks-hr-crm and replace the from-scratch build
+- [ ] Apply premium redesign to that app
